@@ -1,4 +1,4 @@
-package org.gustini.library.excelGenerator;
+package rentasad.library.excelGenerator;
 
 import java.io.IOException;
 import java.util.zip.DataFormatException;
@@ -12,8 +12,11 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.gustini.library.excelGenerator.exceptions.SheetNotFoundException;
-import org.gustini.library.excelGenerator.exceptions.UnknownCellStyleException;
+
+import rentasad.library.excelGenerator.exceptions.SheetNotFoundException;
+import rentasad.library.excelGenerator.exceptions.UnknownCellStyleException;
+import rentasad.library.excelGenerator.objects.ExcelGeneratorValueEntry;
+import rentasad.library.excelGenerator.objects.IExcelMatrix;
 
 /**
  * 

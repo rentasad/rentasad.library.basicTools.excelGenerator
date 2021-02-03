@@ -1,22 +1,10 @@
-package org.gustini.library.excelGenerator;
+package rentasad.library.excelGenerator;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 public class XlsxGeneratorTest
 {
 	String testPath = "g:/Abteilungen/IT/05 Development/Java Workspace Gustini/Rentasad Library/test/rentasad/xlsxgenerator/";
 
-	@Before
-	public void setUp() throws Exception
-	{
-		
-	}
-
-	@After
-	public void tearDown() throws Exception
-	{
-	}
 
 	@Test
 	public void testAddExcelSheetFromExcelMatrixClass() throws Exception

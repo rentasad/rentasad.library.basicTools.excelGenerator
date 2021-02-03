@@ -1,4 +1,4 @@
-package org.gustini.library.excelGenerator.exceptions;
+package rentasad.library.excelGenerator.exceptions;
 
 public class UnknownCellStyleException extends Exception
 {
