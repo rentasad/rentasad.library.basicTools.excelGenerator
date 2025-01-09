@@ -1,85 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>rentasad</groupId>
-	<artifactId>rentasad.library.basicTools.excelGenerator</artifactId>
-	<version>1.2.0</version>
-	<name>Rentasad BasicTools Excel-Generator</name>
-	<description>Tool to simplay generate  Excelfiles</description>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<!-- <source>1.8</source> -->
-					<release>11</release>
-				</configuration>
-			</plugin>
-			<!-- The Maven-Surefire-Plugin is needed to make Unittests while building -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.14.1</version>
-				<configuration>
-					<argLine>--enable-preview</argLine>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.openjfx</groupId>
-				<artifactId>javafx-maven-plugin</artifactId>
-				<version>0.0.5</version>
-				<configuration>
-					<mainClass>HelloFX</mainClass>
-				</configuration>
-			</plugin>
-			      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-      </plugin>
-		</plugins>
-	</build>
+	<groupId>rentasad.library</groupId>
+	<artifactId>rentasad.library.basicTools.excelGenerator</artifactId>
+	<version>3.0.0</version>
+	
+	<url>https://github.com/rentasad/rentasad.library.basicTools.excelGenerator</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.java.version>17</project.java.version>
+		<maven.compiler.source>${project.java.version}</maven.compiler.source>
+		<maven.compiler.target>${project.java.version}</maven.compiler.target>
+		<apachePoiVersion>5.3.0</apachePoiVersion>
+		<!-- DEPENDENCIES VERSIONS -->
+		<maven-clean-plugin>3.2.0</maven-clean-plugin>
+		<maven-resources-plugin>3.3.1</maven-resources-plugin>
+		<maven-compiler-plugin>3.11.0</maven-compiler-plugin>
+		<maven-surefire-plugin>3.1.2</maven-surefire-plugin>
+		<maven-jar-plugin>3.3.0</maven-jar-plugin>
+		<maven-install-plugin>3.1.1</maven-install-plugin>
+		<maven-deploy-plugin>3.1.1</maven-deploy-plugin>
+		<maven-site-plugin>3.12.1</maven-site-plugin>
+		<mavenProjectInfoReportsPlugin>3.1.2</mavenProjectInfoReportsPlugin>
+		<maven-project-info-reports-plugin>3.4.5</maven-project-info-reports-plugin>
+	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.7.0</version>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.9.0</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
-			<version>3.17</version>
+			<version>${apachePoiVersion}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
-			<version>3.17</version>
+			<version>${apachePoiVersion}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-excelant -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-excelant</artifactId>
-			<version>3.17</version>
+			<version>${apachePoiVersion}</version>
 		</dependency>
 	</dependencies>
 
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>${maven-clean-plugin}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin}</version>
+					<configuration>
+						<source>${project.java.version}</source>
+						<target>${project.java.version}</target>
+						<compileSourceRoots>
+							<compileSourceRoot>${project.basedir}/submodules/rentasad.library.basicTools.configFileTool/src/main/java</compileSourceRoot>
+							<compileSourceRoot>${project.basedir}/submodules/rentasad.library.basicTools.stringTools/src/main/java</compileSourceRoot>
+						</compileSourceRoots>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>${maven-jar-plugin}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>${maven-install-plugin}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>${maven-deploy-plugin}</version>
+				</plugin>
+				<!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+				<plugin>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>${maven-site-plugin}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>${maven-project-info-reports-plugin}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<description>	&lt;groupId&gt;rentasad&lt;/groupId&gt;
+	&lt;artifactId&gt;rentasad.library.basicTools.excelGenerator&lt;/artifactId&gt;</description>
 </project>
