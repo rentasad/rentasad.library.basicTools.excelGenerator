@@ -15,7 +15,7 @@
 		<project.java.version>17</project.java.version>
 		<maven.compiler.source>${project.java.version}</maven.compiler.source>
 		<maven.compiler.target>${project.java.version}</maven.compiler.target>
-		<apachePoiVersion>5.3.0</apachePoiVersion>
+		<apachePoiVersion>5.4.0</apachePoiVersion>
 		<!-- DEPENDENCIES VERSIONS -->
 		<maven-clean-plugin>3.2.0</maven-clean-plugin>
 		<maven-resources-plugin>3.3.1</maven-resources-plugin>
