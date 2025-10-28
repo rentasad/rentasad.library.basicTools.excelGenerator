@@ -6,7 +6,7 @@
 
 	<groupId>rentasad.library</groupId>
 	<artifactId>rentasad.library.basicTools.excelGenerator</artifactId>
-	<version>3.0.0</version>
+	<version>3.0.2</version>
 	
 	<url>https://github.com/rentasad/rentasad.library.basicTools.excelGenerator</url>
 
@@ -73,10 +73,6 @@
 					<configuration>
 						<source>${project.java.version}</source>
 						<target>${project.java.version}</target>
-						<compileSourceRoots>
-							<compileSourceRoot>${project.basedir}/submodules/rentasad.library.basicTools.configFileTool/src/main/java</compileSourceRoot>
-							<compileSourceRoot>${project.basedir}/submodules/rentasad.library.basicTools.stringTools/src/main/java</compileSourceRoot>
-						</compileSourceRoots>
 					</configuration>
 				</plugin>
 				<plugin>
